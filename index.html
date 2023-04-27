@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="form">
+        <h1 style="text-align: center;">Form Registrasi</h1>
+        <form name="form" onsubmit="registrasi">
+            <p>Nama</p>
+            <input id="nama" type="text">
+
+            <p>Username</p>
+            <input id="username" type="text">
+
+            <p>Email</p>
+            <input id="email" type="text">
+
+            <p>Password</p>
+            <input id="password" type="text">
+
+            <p>No Telp</p>
+            <input id="telp" type="text">
+
+            <p>Jenis Kelamin</p>
+            <select name="jeniskelamin">
+                <option value="laki-laki">Laki-Laki</option>
+                <option value="perempuan">Perempuan</option>
+            </select>
+
+            <p>Alamat Website</p>
+            <input id="alamat" type="text">
+
+            <button type="button" onclick="registrasi()" style="margin: 5% 0% 2% 0%; 
+                background-color: rgb(217, 177, 128); ">Daftar</button>
+        </form>
+
+        <script>
+            function registrasi()
+            {
+                var form = document.forms["form"];
+                var nama = form.elements["nama"].value;
+                var username = form.elements["username"].value;
+                var email = form.elements["email"].value;
+                var password = form.elements["password"].value;
+
+                if(nama=="" && username=="" && email =="")
+                {
+                    alert("Masukkan Nama, Username, dan Email Anda");
+                }
+                else if(nama == "")
+                {
+                    alert("Masukkan nama Anda");
+                }
+                else if(username == "")
+                {
+                    alert("Masukkan Username");
+                }
+                else if(email == "" || form.email.value.indexOf('@',0,'.')==-1)
+                {
+                    alert("Masukkan Email");
+                }
+                else if(password == "")
+                {
+                    alert("Masukkan Password Anda");
+                }
+                else
+                {
+                    confirm("Selamat, Anda Telah Berhasil Melakukan Resgistrasi");
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
